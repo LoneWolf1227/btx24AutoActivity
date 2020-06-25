@@ -15,7 +15,6 @@ $subdomain = 'your_bitrix24_dubdomain';
 if ($_POST['auth']['application_token'] === 'your_application_token')
 {
     $res = $BT24->method('crm.activity.get', array('id' => $_POST['data']['FIELDS']['ID']));
-    log_data($res);
     $OWNER_TYPE = array_search($res['result']['OWNER_TYPE_ID'], $OWNER_TYPE_ID);
     $path = 'https://'.$subdomain.'.bitrix24.ru/crm/'.$OWNER_TYPE.'/details/'.$res['result']['OWNER_ID'];
     $findMe = 'onlinePBX';
@@ -51,10 +50,4 @@ if ($_POST['auth']['application_token'] === 'your_application_token')
             }
         }
     }
-}
-
-function log_data($data)
-{
-    $file = __DIR__ . '/log.txt';
-    file_put_contents($file, var_export($data, true), FILE_APPEND);
 }
