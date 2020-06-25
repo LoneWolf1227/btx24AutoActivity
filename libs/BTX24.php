@@ -6,7 +6,7 @@ class BTX24{
         $response = '';
         //if (array_key_exists('saved', $_REQUEST)) {
             //$this->defaults = $_REQUEST;
-            $c = curl_init('https://b24-ymflsh.bitrix24.ru/rest/1/you_api_key/' . $method);
+            $c = curl_init('https://your_bitrix24_subdomain.bitrix24.ru/rest/1/you_api_key/' . $method);
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($c, CURLOPT_POST, true);
             curl_setopt($c, CURLOPT_POSTFIELDS, http_build_query($params));
