@@ -10,9 +10,9 @@ $OWNER_TYPE_ID = array(
     'company' => 4
 );
 
-$subdomain = 'b24-ymflsh';
+$subdomain = 'your_bitrix24_dubdomain';
 
-if ($_POST['auth']['application_token'] === 'qktfpxza6hz20efmel62hq1cmbu78hfc')
+if ($_POST['auth']['application_token'] === 'your_application_token')
 {
     $res = $BT24->method('crm.activity.get', array('id' => $_POST['data']['FIELDS']['ID']));
     log_data($res);
