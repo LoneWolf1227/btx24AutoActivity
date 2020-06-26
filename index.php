@@ -20,8 +20,6 @@ if ($_POST['auth']['application_token'] === $application_token)
     //Получаем дела по его ID
     $res = $BT24->method('crm.activity.get', array('id' => $_POST['data']['FIELDS']['ID']));
 
-    //log_data($res);
-
     $findMe = 'onlinePBX';
     $searchResult = strpos($res['result']['DESCRIPTION'], $findMe);
 
