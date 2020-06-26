@@ -10,7 +10,6 @@ $OWNER_TYPE_ID = array(
     'company' => 4
 );
 
-//$subdomain = 'b24-ymflsh';
 //Токен для авторизации приходящих вебхуков.
 $application_token = '';
 
@@ -27,7 +26,7 @@ if ($_POST['auth']['application_token'] === $application_token)
 
         //Генерируем ссылку для дела
         $OWNER_TYPE = array_search($res['result']['OWNER_TYPE_ID'], $OWNER_TYPE_ID);
-        $path = 'https://bitrix24.uley-tmn.ru/crm/'.$OWNER_TYPE.'/details/'.$res['result']['OWNER_ID'];
+        $path = 'https://example.com/crm/'.$OWNER_TYPE.'/details/'.$res['result']['OWNER_ID'];
 
         //Берём всех пользователей с фильтром employee
         $users = $BT24->method('user.get', array(
